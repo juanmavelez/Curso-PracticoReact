@@ -12,8 +12,8 @@ const CarouselItem = () => (
     />
     <section className='carousel-item__details'>
       <figure>
-        <img className='carousel-item__details--img' src='../assets/play-icon.png' alt='Play Icon' />
-        <img className='carousel-item__details--img' src='../assets/plus-icon.png' alt='Plus Icon' />
+        <img className='carousel-item__details--img' src='../assets/static/play-icon.png' alt='Play Icon' />
+        <img className='carousel-item__details--img' src='../assets/static/plus-icon.png' alt='Plus Icon' />
       </figure>
       <figcaption>
         <p className='carousel-item__details--title'>Título descriptivo</p>
