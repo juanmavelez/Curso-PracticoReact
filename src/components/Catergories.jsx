@@ -1,0 +1,15 @@
+import React from 'react';
+import '../assets/styles/components/Categories.scss';
+/**
+ * Contains the title for the Categories Section
+ * @param children all the diferent categories component should be called here
+ */
+
+const Categories = ({ children }) => (
+  <div className='categories'>
+    <h3 className='categories__title'>Mi lista</h3>
+    {children}
+  </div>
+);
+
+export default Categories;
