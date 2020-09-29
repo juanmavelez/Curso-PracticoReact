@@ -1,49 +1,55 @@
 import React from 'react';
 import '../assets/styles/App.scss';
 
+/*  Used to conect the app using react-redux  */
+import { conect } from 'react-redux';
+
 /*      COMPONENTS*     */
-import Header from '../components/Header';
 import Search from '../components/Search';
 import Categories from '../components/Catergories';
 import Carousel from '../components/Carousel';
 import CaroulselItem from '../components/CarouselItem';
-import Footer from '../components/Footer';
 import useInitialState from '../hooks/useInitialState';
-
-/*      API where we obtain the data from the pictures      */
-const API = 'http://localhost:3000/initialState';
 
 /**
  *Returns the component that must be renedered in the home
  */
-const Home = () => {
-  const initialState = useInitialState(API);
-
+const Home = ({ myList, trends, originals} ) => {
   return (
-    <div className='App'>
+    <>
       <Search />
       {/* /* if "mylist" is empty this categorie will not be shown  */}
-      {initialState.state === true && (
+      {myList.state === true && (
         <Categories title='Mi lista'>
           <Carousel>
-            {initialState.state === true &&
-              initialState.mylist.map((item) => <CaroulselItem key={item.id} {...item} />)}
+            {myList.state === true &&
+              myList.mylist.map((item) => <CaroulselItem key={item.id} {...item} />)}
           </Carousel>
         </Categories>
       )}
       <Categories title='Tendencias'>
         <Carousel>
-          {initialState.state === true && initialState.trends.map((item) => <CaroulselItem key={item.id} {...item} />)}
+          {trends.trends.map((item) => <CaroulselItem key={item.id} {...item} />)}
         </Carousel>
       </Categories>
       <Categories title='Originales de Platzi Video'>
         <Carousel>
-          {initialState.state === true &&
-            initialState.originals.map((item) => <CaroulselItem key={item.id} {...item} />)}
+          { originals.originals.map((item) => <CaroulselItem key={item.id} {...item} />)}
         </Carousel>
       </Categories>
-    </div>
+    <>
   );
 };
 
-export default Home;
+const mapStateToProps = () => {
+  return {
+    myList: state.mylist,
+    trends: state.trends,
+    originals: state.originals,
+  };
+};
+/**
+ * @param props : map of our proprs
+ * @param null : it does not have a reducer
+ */
+export default connect(mapStateToProps, null)(Home);
