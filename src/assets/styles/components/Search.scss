@@ -3,11 +3,29 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 300px;
-  border-radius: 0px 0px 40px 40px;
+  height: 30rem;
+  border-radius: 0 0 4rem 4rem;
 }
 
 .main__title {
   color: white;
-  font-size: 25px;
+  font-size: 2.5rem;
+}
+
+.input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 0.2rem solid white;
+  border-radius: 2.5rem;
+  color: white;
+  font-family: 'Muli', sans-serif;
+  font-size: 1.6rem;
+  height: 5rem;
+  margin-bottom: 2rem;
+  outline: none;
+  padding: 0 2rem;
+  width: 70%;
+}
+
+::placeholder {
+  color: white;
 }
