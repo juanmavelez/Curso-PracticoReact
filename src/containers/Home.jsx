@@ -14,14 +14,13 @@ import useInitialState from '../hooks/useInitialState';
 const API = 'http://localhost:3000/initialState';
 
 /**
- *Returns the component that must be renedered
+ *Returns the component that must be renedered in the home
  */
-const App = () => {
+const Home = () => {
   const initialState = useInitialState(API);
 
   return (
     <div className='App'>
-      <Header />
       <Search />
       {/* /* if "mylist" is empty this categorie will not be shown  */}
       {initialState.state === true && (
@@ -43,9 +42,8 @@ const App = () => {
             initialState.originals.map((item) => <CaroulselItem key={item.id} {...item} />)}
         </Carousel>
       </Categories>
-      <Footer />
     </div>
   );
 };
 
-export default App;
+export default Home;
