@@ -10,7 +10,7 @@ import App from './routes/App';
 
 /* Contais the initial state of the db  we add */
 const initialState = {
-  myList: [],
+  mylist: [],
   playing: {},
   trends: [
     {
