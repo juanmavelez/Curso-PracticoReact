@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import Search from '../components/Search';
 import Categories from '../components/Catergories';
 import Carousel from '../components/Carousel';
-import CaroulselItem from '../components/CarouselItem';
+import CaroulselItem from '../components/CarouseItem';
 
 /**
  *Returns the component that must be renedered in the home
@@ -17,7 +17,7 @@ const Home = ({ mylist, trends, originals }) => {
   return (
     <>
       <Search />
-      {/* /* if "mylist" is empty this categorie will not be shown  */}
+      {/*  "mylist" is empty this categorie will not be shown  */}
       {mylist.lenght > 0 && (
         <Categories title='Mi lista'>
           <Carousel>
