@@ -14,12 +14,13 @@ import CaroulselItem from '../components/CarouseItem';
  *Returns the component that must be renedered in the home
  */
 const Home = ({ mylist, trends, originals }) => {
+  console.log(mylist);
   return (
     <>
       <Search />
-      {/*  "mylist" is empty this categorie will not be shown  */}
-      {mylist.lenght > 0 && (
-        <Categories title='Mi lista'>
+      {/*  if "mylist" is empty this categorie will not be shown  */}
+      {mylist.length > 0 && (
+        <Categories title='My Favorites'>
           <Carousel>
             {mylist.map((item) => (
               <CaroulselItem key={item.id} {...item} />
@@ -27,14 +28,14 @@ const Home = ({ mylist, trends, originals }) => {
           </Carousel>
         </Categories>
       )}
-      <Categories title='Tendencias'>
+      <Categories title='Tendencies'>
         <Carousel>
           {trends.map((item) => (
             <CaroulselItem key={item.id} {...item} />
           ))}
         </Carousel>
       </Categories>
-      <Categories title='Originales de Platzi Video'>
+      <Categories title='Originals Platzi Video'>
         <Carousel>
           {originals.map((item) => (
             <CaroulselItem key={item.id} {...item} />

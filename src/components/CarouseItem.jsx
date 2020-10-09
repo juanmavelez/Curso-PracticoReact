@@ -4,11 +4,12 @@ import '../assets/styles/components/CarouselItem.scss';
 /*    connect the app with redux   */
 import { connect } from 'react-redux';
 /*    action used for this item */
-import { setFavorite } from '../actions';
+import { setFavorite, deleteFavorite } from '../actions';
 
 /*      ICONS     */
 import playIcon from '../assets/static/play-icon.png';
 import plusIcon from '../assets/static/plus-icon.png';
+import removeIcon from '../assets/static/remove-icon.png';
 
 /**
  * Contains the HTML of all the Carousel items
@@ -26,6 +27,9 @@ const CarouselItem = (props) => {
       duration,
     });
   };
+  const handleDeleteFavorite = (itemId) => {
+    props.deleteFavorite(itemId);
+  };
 
   return (
     <figure className='carousel-item'>
@@ -34,11 +38,17 @@ const CarouselItem = (props) => {
         <figure>
           <img className='carousel-item__details--img' src={playIcon} alt='Play Icon' />
           <img className='carousel-item__details--img' src={plusIcon} alt='Plus Icon' onClick={handleSetFavorite} />
+          <img
+            className='carousel-item__details--img'
+            src={removeIcon}
+            alt='Remove Icon'
+            onClick={() => handleDeleteFavorite(id)}
+          />
+          <figcaption>
+            <p className='carousel-item__details--title'>{title}</p>
+            <p className='carousel-item__details--subtitle'>{`${year} ${contentRating} ${duration}`}</p>
+          </figcaption>
         </figure>
-        <figcaption>
-          <p className='carousel-item__details--title'>{title}</p>
-          <p className='carousel-item__details--subtitle'>{`${year} ${contentRating} ${duration}`}</p>
-        </figcaption>
       </section>
     </figure>
   );
@@ -46,6 +56,7 @@ const CarouselItem = (props) => {
 
 const mapDispatchToProps = {
   setFavorite,
+  deleteFavorite,
 };
 
 /* we are not sending info, so we put null the map mapStateToProps */

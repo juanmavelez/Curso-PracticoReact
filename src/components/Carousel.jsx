@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/styles/components/Carousel.scss';
+
 /**
  * Contains the html for Carousel
  * @param {*} param0 contains all the intems  from carousel
