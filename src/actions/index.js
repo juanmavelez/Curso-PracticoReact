@@ -24,3 +24,12 @@ export const loginRequest = (payload) => ({
   type: 'LOGIN_REQUEST',
   payload,
 });
+
+/**
+ * Action used to  request a Logout in Login
+ * @param {*} payload
+ */
+export const logoutRequest = (payload) => ({
+  type: 'LOGOUT_REQUEST',
+  payload,
+});
