@@ -1,5 +1,5 @@
 /**
- * describes the action that we are going to do with our favourites
+ * Action used to setFavorites in CarouselItems
  * @param {*} payload info that we are going to transfer to the reducer
  */
 export const setFavorite = (payload) => ({
@@ -7,9 +7,20 @@ export const setFavorite = (payload) => ({
   payload,
 });
 
+/**
+ * Action used to delete from favorites in CarouselItems
+ * @param {*} payload
+ */
 export const deleteFavorite = (payload) => ({
   type: 'DELETE_FAVORITE',
   payload,
 });
 
-export default setFavorite;
+/**
+ * Action used to  request a Login in Login
+ * @param {*} payload
+ */
+export const loginRequest = (payload) => ({
+  type: 'LOGIN_REQUEST',
+  payload,
+});

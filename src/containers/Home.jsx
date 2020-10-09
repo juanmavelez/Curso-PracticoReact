@@ -14,7 +14,6 @@ import CaroulselItem from '../components/CarouseItem';
  *Returns the component that must be renedered in the home
  */
 const Home = ({ mylist, trends, originals }) => {
-  console.log(mylist);
   return (
     <>
       <Search />
@@ -23,7 +22,7 @@ const Home = ({ mylist, trends, originals }) => {
         <Categories title='My Favorites'>
           <Carousel>
             {mylist.map((item) => (
-              <CaroulselItem key={item.id} {...item} />
+              <CaroulselItem key={item.id} {...item} isList />
             ))}
           </Carousel>
         </Categories>
