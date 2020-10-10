@@ -15,7 +15,6 @@ import gravatar from '../utils/gravatar';
  * Contains the html for Header
  */
 const Header = (props) => {
-  console.log(props);
   const { user = {} } = props;
   const hasUser = Object.keys(user).length > 0;
 

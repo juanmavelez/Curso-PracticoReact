@@ -33,3 +33,21 @@ export const logoutRequest = (payload) => ({
   type: 'LOGOUT_REQUEST',
   payload,
 });
+
+/**
+ * Action used to register the user in Register
+ * @param {*} payload
+ */
+export const registerRequest = (payload) => ({
+  type: 'REGISTER_REQUEST',
+  payload,
+});
+
+/**
+ * Action used to  assing Playing to the db
+ * @param {*} payload
+ */
+export const getVideoSource = (payload) => ({
+  type: 'GET_VIDEO_SOURCE',
+  payload,
+});

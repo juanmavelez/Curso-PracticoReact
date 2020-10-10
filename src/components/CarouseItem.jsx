@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/CarouselItem.scss';
 
 /*    connect the app with redux   */
@@ -37,7 +38,9 @@ const CarouselItem = (props) => {
       <img className='carousel-item__img' src={cover} alt={title} />
       <section className='carousel-item__details'>
         <figure>
-          <img className='carousel-item__details--img' src={playIcon} alt='Play Icon' />
+          <Link to={`/player/${id}`}>
+            <img className='carousel-item__details--img' src={playIcon} alt='Play Icon' />
+          </Link>
           {isList ? (
             <img
               className='carousel-item__details--img'

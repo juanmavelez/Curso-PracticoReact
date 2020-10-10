@@ -7,6 +7,7 @@ import Login from '../containers/Login';
 import Register from '../containers/Register';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
+import Player from '../containers/Player';
 
 /**
  * Router that chooses what to render depending on the path that we are in
@@ -18,6 +19,7 @@ const App = () => (
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
+        <Route exact path='/player/:id' component={Player} />
         <React component={NotFound} />
       </Switch>
     </Layout>

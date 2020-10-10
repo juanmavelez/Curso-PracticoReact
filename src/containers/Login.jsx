@@ -38,8 +38,8 @@ const Login = (props) => {
       <section className='login__container'>
         <h2>Sing in</h2>
         <form className='login__container--form' onSubmit={handleSubmit}>
-          <input name='email' className='input' type='text' placeholder='Email' onClick={hanldeInput} />
-          <input name='contraseña' className='input' type='password' placeholder='Password' onClick={hanldeInput} />
+          <input name='email' className='input' type='text' placeholder='Email' onChange={hanldeInput} />
+          <input name='contraseña' className='input' type='password' placeholder='Password' onChange={hanldeInput} />
           <input className='button' type='submit' />
           <span>Log in</span>
           <div className='login__container--remember-me'>
