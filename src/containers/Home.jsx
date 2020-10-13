@@ -1,7 +1,7 @@
 import React from 'react';
 import '../assets/styles/App.scss';
 
-/*  Used to conect the app using react-redux  */
+/*  Redux  */
 import { connect } from 'react-redux';
 
 /*      COMPONENTS*     */
@@ -9,6 +9,7 @@ import Search from '../components/Search';
 import Categories from '../components/Catergories';
 import Carousel from '../components/Carousel';
 import CaroulselItem from '../components/CarouseItem';
+import Header from '../components/Header';
 
 /**
  *Returns the component that must be renedered in the home
@@ -16,6 +17,7 @@ import CaroulselItem from '../components/CarouseItem';
 const Home = ({ mylist, trends, originals }) => {
   return (
     <>
+      <Header />
       <Search />
       {/*  if "mylist" is empty this categorie will not be shown  */}
       {mylist.length > 0 && (
@@ -27,7 +29,7 @@ const Home = ({ mylist, trends, originals }) => {
           </Carousel>
         </Categories>
       )}
-      <Categories title='Tendencies'>
+      <Categories title='Trending'>
         <Carousel>
           {trends.map((item) => (
             <CaroulselItem key={item.id} {...item} />

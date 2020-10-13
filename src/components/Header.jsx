@@ -2,6 +2,8 @@ import React from 'react';
 import '../assets/styles/components/Header.scss';
 import { Link } from 'react-router-dom';
 
+import classNames from 'classnames';
+
 /*    Redux   */
 import { connect } from 'react-redux';
 import { logoutRequest } from '../actions';
@@ -15,15 +17,17 @@ import gravatar from '../utils/gravatar';
  * Contains the html for Header
  */
 const Header = (props) => {
-  const { user = {} } = props;
+  const { user = {}, isLogin, isRegister } = props;
   const hasUser = Object.keys(user).length > 0;
 
   const handleLogout = () => {
     props.logoutRequest({});
   };
 
+  const HeaderClass = classNames('header', { isLogin, isRegister });
+
   return (
-    <header className='header'>
+    <header className={HeaderClass}>
       <Link to='/'>
         <figure>
           <img className='header__img' src={logo} alt='Platzi Video' />

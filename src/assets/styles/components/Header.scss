@@ -1,3 +1,5 @@
+@import '../Vars.scss';
+
 .header {
   align-items: center;
   background: #8f57fd;
@@ -7,6 +9,11 @@
   justify-content: space-between;
   top: 0;
   width: 100%;
+}
+
+.isLogin,
+.isRegister {
+  background-color: #21c08b;
 }
 
 .header__img {
@@ -34,7 +41,7 @@ ul:hover {
 }
 
 .header__menu li {
-  margin: 1rem 0px;
+  margin: 0.1rem 0;
 }
 
 .header__menu li a {
@@ -54,5 +61,7 @@ ul:hover {
 
 .header__menu--profile img {
   margin-right: 0.8rem;
-  width: 6rem;
+  width: 4rem;
+  border-radius: 100%;
+  object-fit: cover;
 }

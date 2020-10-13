@@ -14,9 +14,9 @@ video:hover .Player-back {
 
 .Player-back {
   position: fixed;
-  top: 5px;
-  left: 5px;
-  font-size: 12px;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 1.2rem;
 }
 
 .Player-back button {
@@ -24,7 +24,7 @@ video:hover .Player-back {
   color: white;
   background: rgba(0, 0, 0, 0.3);
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   border: 0;
   outline: 0;
   cursor: pointer;

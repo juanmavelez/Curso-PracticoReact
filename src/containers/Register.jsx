@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+/*    Redux    */
+import { connect } from 'react-redux';
 import { registerRequest } from '../actions';
-/*    Styles    */
+
 import '../assets/styles/components/Register.scss';
+import Header from '../components/Header';
 
 /**
  * Contains the html for Register
@@ -25,19 +28,22 @@ const Register = (props) => {
   };
 
   return (
-    <section className='register'>
-      <section className='register__container'>
-        <h2>Sing up</h2>
-        <form className='register__container--form' onSubmit={handleSubmit}>
-          <input className='input' type='text' placeholder='Nombre' onChange={handleInput} />
-          <input className='input' type='text' placeholder='Correo' onChange={handleInput} />
-          <input className='input' type='password' placeholder='Contraseña' />
-          <input className='button' type='submit' />
-          Register
-        </form>
-        <Link to='/login'>Sing in</Link>
+    <>
+      <Header isRegister />
+      <section className='register'>
+        <section className='register__container'>
+          <h2>Sing up</h2>
+          <form className='register__container--form' onSubmit={handleSubmit}>
+            <input className='input' type='text' placeholder='Nombre' onChange={handleInput} />
+            <input className='input' type='text' placeholder='Correo' onChange={handleInput} />
+            <input className='input' type='password' placeholder='Contraseña' />
+            <input className='button' type='submit' />
+            Register
+          </form>
+          <Link to='/login'>Sing in</Link>
+        </section>
       </section>
-    </section>
+    </>
   );
 };
 
