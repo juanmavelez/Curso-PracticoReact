@@ -4,22 +4,22 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 0px 30px;
+  padding: 0 3rem;
   min-height: calc(
-    100vh - 200px
+    100vh - 20rem
   ); /* El ancho será igual al tamaño de todo el height menos 200px (100px del header + 100px del footer) */
 }
 
 .register__container {
   background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid white;
-  border-radius: 40px;
+  border: 0.2rem solid white;
+  border-radius: 4rem;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 60px 68px 40px;
+  padding: 6rem 6.8rem 4rem;
 }
 
 .register__container--form {
@@ -29,7 +29,7 @@
 
 .register__container a {
   color: white;
-  font-size: 16px;
+  font-size: 1.6rem;
   text-align: center;
   text-decoration: none;
 }
