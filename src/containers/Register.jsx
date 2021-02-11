@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-/*    Redux    */
 import { connect } from 'react-redux';
 import { registerRequest } from '../actions';
 
 import '../assets/styles/components/Register.scss';
 import Header from '../components/Header';
 
-/**
- * Contains the html for Register
- */
 const Register = (props) => {
   const [form, setValues] = useState({ email: '', name: '', password: '' });
 

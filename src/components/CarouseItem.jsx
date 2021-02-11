@@ -1,20 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles/components/CarouselItem.scss';
-
-/*    connect the app with redux   */
 import { connect } from 'react-redux';
-/*    action used for this item */
 import { setFavorite, deleteFavorite } from '../actions';
-
-/*      ICONS     */
 import playIcon from '../assets/static/play-icon.png';
 import plusIcon from '../assets/static/plus-icon.png';
 import removeIcon from '../assets/static/remove-icon.png';
 
-/**
- * Contains the HTML of all the Carousel items
- */
 const CarouselItem = (props) => {
   const { id, cover, title, year, contentRating, duration, isList } = props;
 
@@ -66,5 +58,4 @@ const mapDispatchToProps = {
   deleteFavorite,
 };
 
-/* we are not sending info, so we put null the map mapStateToProps */
 export default connect(null, mapDispatchToProps)(CarouselItem);

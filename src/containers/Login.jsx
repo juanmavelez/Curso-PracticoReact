@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import '../assets/styles/components/Login.scss';
 import { Link } from 'react-router-dom';
-
-/*    Redux    */
 import { connect } from 'react-redux';
 import { loginRequest } from '../actions';
-
 import Header from '../components/Header';
 import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
 
-/**
- *Returns the component that must be renedered in the Login
- */
 const Login = (props) => {
   const [form, setValues] = useState({
     email: '',
@@ -24,14 +18,9 @@ const Login = (props) => {
     });
   };
 
-  /*  send the state  of the form into our state */
   const handleSubmit = (event) => {
-    /* We need to add this, to avoid the normal effect of the forms */
     event.preventDefault();
     props.loginRequest(form);
-
-    /* We got acces to the history because we wrap
-    this componenet in App with ReactRouter */
     props.history.push('/');
   };
 

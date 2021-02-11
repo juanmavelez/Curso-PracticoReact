@@ -1,7 +1,6 @@
 import { createStore } from 'redux';
 import reducer from '../reducers';
 
-/* Contais the initial state of the db  we add */
 const initialState = {
   mylist: [],
   playing: {},

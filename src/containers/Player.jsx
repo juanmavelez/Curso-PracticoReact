@@ -1,15 +1,9 @@
 import React, { useEffect } from 'react';
 import '../assets/styles/components/Player.scss';
-
-/*    Redux   */
 import { connect } from 'react-redux';
 import { getVideoSource } from '../actions';
 
 import NotFound from './NotFound';
-
-/**
- *Returns the component that must be renedered in the Player, when the user tries to play a video
- */
 const Player = (props) => {
   const { id } = props.match.params;
   const hasPLaying = Object.keys(props.playing).length > 0;

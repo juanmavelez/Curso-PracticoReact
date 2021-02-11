@@ -1,25 +1,17 @@
 import React from 'react';
 import '../assets/styles/App.scss';
-
-/*  Redux  */
 import { connect } from 'react-redux';
-
-/*      COMPONENTS*     */
 import Search from '../components/Search';
 import Categories from '../components/Catergories';
 import Carousel from '../components/Carousel';
 import CaroulselItem from '../components/CarouseItem';
 import Header from '../components/Header';
 
-/**
- *Returns the component that must be renedered in the home
- */
 const Home = ({ mylist, trends, originals }) => {
   return (
     <>
       <Header />
       <Search />
-      {/*  if "mylist" is empty this categorie will not be shown  */}
       {mylist.length > 0 && (
         <Categories title='My Favorites'>
           <Carousel>
@@ -55,8 +47,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-/**
- * @param props : map of our proprs
- * @param null : it does not have a reducer
- */
 export default connect(mapStateToProps, null)(Home);
